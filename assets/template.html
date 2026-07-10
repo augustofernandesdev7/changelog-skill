@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Change Logs BarberIA — 10/07/2026</title>
+<title>Change Logs {NOME DO PROJETO} — {DD/MM/AAAA}</title>
 <style>
   :root {
     --bg: #FAFAFB;
@@ -13,9 +13,9 @@
     --text: #09090B;
     --text-2: #4B5563;
     --text-3: #9CA3AF;
-    --indigo: #6C5CE7;
-    --indigo-light: #F0EEFE;
-    --indigo-deep: #4C3FBF;
+    --accent: #6C5CE7;
+    --accent-light: #F0EEFE;
+    --accent-deep: #4C3FBF;
     --success: #16A34A;
     --success-light: #DCFCE7;
     --warning: #D97706;
@@ -35,9 +35,9 @@
     --text: #F3F2F7;
     --text-2: #B8B4C7;
     --text-3: #726C87;
-    --indigo: #8B7EF0;
-    --indigo-light: rgba(139,126,240,.14);
-    --indigo-deep: #A79AF5;
+    --accent: #8B7EF0;
+    --accent-light: rgba(139,126,240,.14);
+    --accent-deep: #A79AF5;
     --success: #34D399;
     --success-light: rgba(52,211,153,.12);
     --warning: #FBBF24;
@@ -56,9 +56,9 @@
       --text: #F3F2F7;
       --text-2: #B8B4C7;
       --text-3: #726C87;
-      --indigo: #8B7EF0;
-      --indigo-light: rgba(139,126,240,.14);
-      --indigo-deep: #A79AF5;
+      --accent: #8B7EF0;
+      --accent-light: rgba(139,126,240,.14);
+      --accent-deep: #A79AF5;
       --success: #34D399;
       --success-light: rgba(52,211,153,.12);
       --warning: #FBBF24;
@@ -69,6 +69,10 @@
       --shadow-md: 0 8px 24px rgba(0,0,0,.4);
     }
   }
+
+  /* NOTE FOR ADAPTATION: --accent/--accent-light/--accent-deep should be swapped for the
+     real project's brand color (check tailwind.config, a CSS theme file, or a BRAND
+     constant in the codebase before defaulting to this indigo). */
 
   * { box-sizing: border-box; }
   body {
@@ -86,7 +90,7 @@
     overflow-y: auto; padding: 28px 18px; border-right: 1px solid var(--border);
   }
   .toc-brand { display: flex; align-items: center; gap: 8px; margin-bottom: 22px; font-weight: 800; font-size: 16px; letter-spacing: -.3px; }
-  .toc-brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--indigo); box-shadow: 0 0 0 4px var(--indigo-light); }
+  .toc-brand .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--accent-light); }
   .toc-label { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: var(--text-3); font-weight: 700; margin: 0 0 8px 4px; }
   .toc a {
     display: flex; align-items: center; gap: 9px; padding: 7px 10px; border-radius: var(--radius-sm);
@@ -106,19 +110,19 @@
   .hero { margin-bottom: 56px; }
   .hero .eyebrow {
     display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700;
-    letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); background: var(--indigo-light);
+    letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-light);
     padding: 5px 12px; border-radius: 100px; margin-bottom: 18px;
   }
   .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; letter-spacing: -1px; margin: 0 0 14px; text-wrap: balance; }
   .hero p { font-size: 16px; color: var(--text-2); max-width: 640px; line-height: 1.65; margin: 0 0 28px; }
   .hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
-  .hero-stat .num { font-size: 26px; font-weight: 800; color: var(--indigo); font-variant-numeric: tabular-nums; }
+  .hero-stat .num { font-size: 26px; font-weight: 800; color: var(--accent); font-variant-numeric: tabular-nums; }
   .hero-stat .lbl { font-size: 11.5px; color: var(--text-3); font-weight: 600; }
 
   section.feature { margin-bottom: 64px; scroll-margin-top: 24px; padding-top: 8px; }
   .feature-head { display: flex; gap: 16px; margin-bottom: 20px; align-items: flex-start; }
   .feature-icon {
-    width: 40px; height: 40px; border-radius: 11px; background: var(--indigo-light); color: var(--indigo);
+    width: 40px; height: 40px; border-radius: 11px; background: var(--accent-light); color: var(--accent);
     display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px;
   }
   .feature-head h2 { font-size: 21px; font-weight: 800; letter-spacing: -.3px; margin: 0 0 4px; }
@@ -159,7 +163,7 @@
     font-family: inherit;
   }
   .btn:active { transform: scale(.98); }
-  .btn-primary { background: var(--indigo); color: #fff; }
+  .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { opacity: .9; }
   .btn-primary:disabled { opacity: .4; cursor: not-allowed; }
   .btn-outline { background: transparent; color: var(--text-2); border-color: var(--border); }
@@ -169,7 +173,7 @@
     width: 100%; padding: 9px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg);
     color: var(--text); font-size: 13.5px; font-family: inherit;
   }
-  .input:focus { outline: 2px solid var(--indigo); outline-offset: -1px; }
+  .input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
   .label { font-size: 12px; font-weight: 600; color: var(--text-2); margin-bottom: 5px; display: block; }
   .field { margin-bottom: 14px; }
   .badge {
@@ -198,7 +202,7 @@
 
   /* toggle switch */
   .switch { position: relative; width: 38px; height: 21px; border-radius: 100px; background: var(--border); cursor: pointer; flex-shrink: 0; transition: background .2s; }
-  .switch.on { background: var(--indigo); }
+  .switch.on { background: var(--accent); }
   .switch .knob { position: absolute; top: 2px; left: 2px; width: 17px; height: 17px; border-radius: 50%; background: #fff; transition: transform .2s; }
   .switch.on .knob { transform: translateX(17px); }
 
@@ -208,8 +212,8 @@
     width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
     font-size: 11px; font-weight: 700; background: var(--surface-2); color: var(--text-3); flex-shrink: 0;
   }
-  .step-dot.done { background: var(--indigo); color: #fff; }
-  .step-dot.active { background: var(--indigo); color: #fff; box-shadow: 0 0 0 4px var(--indigo-light); }
+  .step-dot.done { background: var(--accent); color: #fff; }
+  .step-dot.active { background: var(--accent); color: #fff; box-shadow: 0 0 0 4px var(--accent-light); }
   .step-line { flex: 1; height: 2px; background: var(--border); min-width: 8px; }
 
   /* code-diff card */
@@ -241,8 +245,8 @@
   .chat-list { border-right: 1px solid var(--border); overflow-y: auto; }
   .chat-item { display: flex; align-items: center; gap: 8px; padding: 10px 12px; cursor: pointer; border-bottom: 1px solid var(--border); }
   .chat-item:hover { background: var(--surface-2); }
-  .chat-item.active { background: var(--indigo-light); }
-  .chat-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo), #A78BFA); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .chat-item.active { background: var(--accent-light); }
+  .chat-avatar { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #A78BFA); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; }
   .chat-item .meta p { margin: 0; font-size: 11.5px; }
   .chat-item .meta .nm { font-weight: 600; color: var(--text); }
   .chat-item .meta .lm { color: var(--text-3); font-size: 10.5px; }
@@ -250,7 +254,7 @@
   .chat-msgs { flex: 1; overflow-y: auto; padding: 14px; display: flex; flex-direction: column; gap: 8px; }
   .bubble { max-width: 75%; padding: 8px 12px; border-radius: 10px; font-size: 12.5px; line-height: 1.5; }
   .bubble.in { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--border); }
-  .bubble.out { align-self: flex-end; background: var(--indigo); color: #fff; }
+  .bubble.out { align-self: flex-end; background: var(--accent); color: #fff; }
   .bubble .img-ph { width: 120px; height: 80px; border-radius: 8px; background: repeating-linear-gradient(45deg, #d8d4f0, #d8d4f0 6px, #ece9fb 6px, #ece9fb 12px); display: flex; align-items: center; justify-content: center; font-size: 20px; }
   .bubble .audio-ph { display: flex; align-items: center; gap: 8px; min-width: 140px; }
   .bubble .audio-ph .play { width: 24px; height: 24px; border-radius: 50%; background: rgba(255,255,255,.25); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
@@ -263,27 +267,26 @@
     width: 42px; height: 50px; text-align: center; font-size: 20px; font-weight: 700; border-radius: 8px;
     border: 1px solid var(--border); background: var(--bg); color: var(--text);
   }
-  .code-boxes input:focus { outline: 2px solid var(--indigo); outline-offset: -1px; }
+  .code-boxes input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
 
-  /* whatsapp msg preview */
-  .wa-bubble {
+  /* chat-style external message preview (e.g. WhatsApp/SMS notification) */
+  .msg-bubble {
     background: #DCF8C6; color: #1a1a1a; border-radius: 10px; padding: 12px 14px; font-size: 12.5px;
     line-height: 1.6; white-space: pre-wrap; font-family: ui-monospace, monospace; max-width: 420px;
     border: 1px solid rgba(0,0,0,.06);
   }
-  :root[data-theme="dark"] .wa-bubble, @media (prefers-color-scheme: dark) { }
-  .wa-wrap { background: #E5DDD5; border-radius: 12px; padding: 16px; }
-  :root[data-theme="dark"] .wa-wrap { background: #0b141a; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wa-wrap { background: #0b141a; } }
-  :root[data-theme="dark"] .wa-bubble { background: #056162; color: #e9edef; }
-  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .wa-bubble { background: #056162; color: #e9edef; } }
+  .msg-wrap { background: #E5DDD5; border-radius: 12px; padding: 16px; }
+  :root[data-theme="dark"] .msg-wrap { background: #0b141a; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .msg-wrap { background: #0b141a; } }
+  :root[data-theme="dark"] .msg-bubble { background: #056162; color: #e9edef; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .msg-bubble { background: #056162; color: #e9edef; } }
 
   .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
   .tab-btn {
     padding: 9px 14px; font-size: 12.5px; font-weight: 600; color: var(--text-3); background: transparent; border: none;
     border-bottom: 2px solid transparent; cursor: pointer; font-family: inherit;
   }
-  .tab-btn.active { color: var(--indigo); border-color: var(--indigo); }
+  .tab-btn.active { color: var(--accent); border-color: var(--accent); }
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
 
@@ -314,92 +317,82 @@
 <body>
 <div class="wrap">
   <nav class="toc">
-    <div class="toc-brand"><span class="dot"></span>Barber<span style="color:var(--indigo)">IA</span></div>
+    <div class="toc-brand"><span class="dot"></span>Acme<span style="color:var(--accent)">SaaS</span></div>
     <p class="toc-label">Change Log</p>
-    <a href="#f1"><span class="n">1</span>Trial de 30 dias</a>
-    <a href="#f2"><span class="n">2</span>Aceite dos Termos</a>
-    <a href="#f3"><span class="n">3</span>Ativação do teste</a>
-    <a href="#f4"><span class="n">4</span>Email de boas-vindas</a>
-    <a href="#f5"><span class="n">5</span>Bloqueio automático</a>
-    <a href="#f6"><span class="n">6</span>Notificações WhatsApp</a>
-    <a href="#f7"><span class="n">7</span>Logs de notificação</a>
-    <a href="#f8"><span class="n">8</span>Lembrete de trial</a>
-    <a href="#f9"><span class="n">9</span>Chat em tempo real</a>
-    <a href="#f10"><span class="n">10</span>Redefinir senha</a>
-    <a href="#f11"><span class="n">11</span>Contactar (Dashboard)</a>
-    <a href="#f12"><span class="n">12</span>Correção de churn</a>
-    <a href="#f13"><span class="n">13</span>Badge trial expirado</a>
-    <a href="#f14"><span class="n">14</span>Página da barbearia</a>
+    <a href="#f1"><span class="n">1</span>Exemplo: novo fluxo</a>
+    <a href="#f2"><span class="n">2</span>Exemplo: formulário + termos</a>
+    <a href="#f3"><span class="n">3</span>Exemplo: assistente em etapas</a>
+    <a href="#f4"><span class="n">4</span>Exemplo: e-mail transacional</a>
+    <a href="#f5"><span class="n">5</span>Exemplo: estado ativo/bloqueado</a>
+    <a href="#f6"><span class="n">6</span>Exemplo: lista com filtro e busca</a>
+    <a href="#f7"><span class="n">7</span>Exemplo: código de verificação</a>
+    <a href="#f8"><span class="n">8</span>Exemplo: chat em tempo real</a>
+    <a href="#f9"><span class="n">9</span>Exemplo: antes/depois (correção)</a>
+    <a href="#f10"><span class="n">10</span>Exemplo: detalhe com abas</a>
+    <a href="#f11"><span class="n">11</span>Pendências em aberto</a>
   </nav>
 
   <main>
     <div class="hero">
       <span class="eyebrow">● Change Logs</span>
-      <h1>Change Logs BarberIA — 10/07/2026</h1>
+      <h1>Change Logs {NOME DO PROJETO} — {DD/MM/AAAA}</h1>
       <p>
-        Registro completo de tudo o que foi implementado, corrigido e melhorado nesta rodada de trabalho —
-        do fluxo de cadastro do cliente até o painel administrativo. Cada item abaixo tem uma explicação em
-        linguagem simples e uma simulação interativa da tela real, pra você conferir como funciona sem precisar
-        estar logado no sistema.
+        Registro completo de tudo o que foi implementado, corrigido e melhorado nesta rodada de trabalho.
+        Cada item abaixo tem uma explicação em linguagem simples e uma simulação interativa da tela real,
+        pra você conferir como funciona sem precisar estar logado no sistema.
       </p>
       <div class="hero-stats">
-        <div class="hero-stat"><div class="num">14</div><div class="lbl">Funcionalidades</div></div>
-        <div class="hero-stat"><div class="num">6</div><div class="lbl">Telas novas</div></div>
+        <div class="hero-stat"><div class="num">10</div><div class="lbl">Funcionalidades</div></div>
+        <div class="hero-stat"><div class="num">4</div><div class="lbl">Telas novas</div></div>
         <div class="hero-stat"><div class="num">2</div><div class="lbl">Bugs corrigidos</div></div>
-        <div class="hero-stat"><div class="num">3</div><div class="lbl">Emails novos</div></div>
+        <div class="hero-stat"><div class="num">2</div><div class="lbl">Pendências em aberto</div></div>
       </div>
     </div>
 
-    <!-- ════════ 1. Trial 30 dias ════════ -->
+    <!-- ════════ 1. Exemplo: contador/ativação ════════ -->
     <section class="feature" id="f1">
       <div class="feature-head">
-        <div class="feature-icon">⏳</div>
-        <div>
-          <h2>Teste grátis agora é de 30 dias <span class="feature-tag tag-improve">Alterado</span></h2>
-        </div>
+        <div class="feature-icon">🚀</div>
+        <div><h2>Exemplo: ativação de um novo fluxo <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>O período de teste gratuito passou de <strong>14 para 30 dias</strong> em todo o sistema — não só no texto
-        da landing page, mas na lógica real que controla quando o acesso é bloqueado. Isso inclui o cadastro, o
-        painel administrativo (ao criar uma barbearia manualmente ou conceder dias extra de trial) e os vídeos
-        promocionais.</p>
+        <p>Use este padrão sempre que a novidade for "o usuário clica em algo e um estado muda" — ex: ativar um
+        teste grátis, confirmar uma assinatura, iniciar uma automação. Escreva o texto explicando o comportamento
+        real (o que muda, pra quem, a partir de quando), depois simule o clique de verdade.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/dashboard</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/dashboard</span></div>
           <div class="frame-body" style="text-align:center">
             <div class="mini-card" style="display:inline-block; text-align:left; min-width:280px">
               <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-                <span style="font-size:18px">🎉</span><strong>Trial ativo</strong>
+                <span style="font-size:18px">🎉</span><strong>Exemplo de recurso</strong>
               </div>
-              <p id="f1-msg" style="margin:0;font-size:12.5px;color:var(--text-2)">Clique para simular a ativação de um novo teste grátis.</p>
+              <p id="f1-msg" style="margin:0;font-size:12.5px;color:var(--text-2)">Clique para simular a ativação.</p>
             </div>
             <div style="margin-top:16px">
-              <button class="btn btn-primary" onclick="f1activate()">Simular ativação do trial</button>
+              <button class="btn btn-primary" onclick="f1activate()">Simular ativação</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 2. Termos ════════ -->
+    <!-- ════════ 2. Exemplo: formulário + termos ════════ -->
     <section class="feature" id="f2">
       <div class="feature-head">
         <div class="feature-icon">📝</div>
-        <div><h2>Aceite dos Termos de Uso no cadastro <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div><h2>Exemplo: novo campo obrigatório num formulário <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>O formulário de criação de conta agora exige que o cliente marque a caixinha <strong>"Li e aceito os
-        Termos de Uso e a Política de Privacidade"</strong> antes de conseguir criar a conta. O botão fica
-        desabilitado até isso acontecer, e o momento exato do aceite (com data e hora) fica registrado na conta
-        do usuário — útil para qualquer questão jurídica futura.</p>
+        <p>Use este padrão pra qualquer mudança de formulário: um campo novo, uma validação, uma caixa de aceite.
+        O botão de envio fica desabilitado até a condição ser satisfeita — deixe isso visível na simulação.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/register</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/cadastro</span></div>
           <div class="frame-body" style="max-width:340px;margin:0 auto">
-            <div class="field"><label class="label">Nome e Sobrenome</label><input class="input" placeholder="Ex: João Silva"></div>
+            <div class="field"><label class="label">Nome</label><input class="input" placeholder="Ex: Nome completo"></div>
             <div class="field"><label class="label">Email</label><input class="input" placeholder="voce@exemplo.com"></div>
-            <div class="field"><label class="label">Telefone / WhatsApp</label><input class="input" placeholder="+351 912 345 678"></div>
             <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--text-2);margin-bottom:16px;cursor:pointer">
               <input type="checkbox" id="f2check" onchange="f2toggle()" style="margin-top:2px">
-              <span>Li e aceito os <a href="#" style="color:var(--indigo)">Termos de Uso</a> e a <a href="#" style="color:var(--indigo)">Política de Privacidade</a>.</span>
+              <span>Li e aceito os <a href="#" style="color:var(--accent)">Termos de Uso</a>.</span>
             </label>
             <button class="btn btn-primary" id="f2btn" disabled style="width:100%;justify-content:center" onclick="f2submit()">Criar conta</button>
             <p id="f2success" style="display:none;margin:10px 0 0;font-size:12px;color:var(--success);font-weight:600">✓ Conta criada! Aceite registado às <span id="f2time"></span>.</p>
@@ -408,67 +401,57 @@
       </div>
     </section>
 
-    <!-- ════════ 3. Ativação do teste ════════ -->
+    <!-- ════════ 3. Exemplo: assistente em etapas ════════ -->
     <section class="feature" id="f3">
       <div class="feature-head">
-        <div class="feature-icon">🚀</div>
-        <div><h2>Nova etapa de confirmação no cadastro <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div class="feature-icon">🧭</div>
+        <div><h2>Exemplo: nova etapa num assistente/wizard <span class="feature-tag tag-improve">Alterado</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Antes, o teste grátis começava a contar automaticamente assim que o cliente terminava de preencher os
-        dados da barbearia — sem ele perceber. Agora existe uma <strong>6ª etapa explícita</strong> no assistente
-        de cadastro: um resumo do que foi configurado e um botão claro,
-        <strong>"Ativar teste gratuito de 30 dias"</strong>. O cronômetro só começa a contar no momento desse clique.</p>
+        <p>Use este padrão quando um fluxo de várias etapas ganhar uma etapa nova (ex: uma confirmação explícita
+        antes de uma ação irreversível). Mostre o stepper com a etapa atual destacada.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/dashboard/onboarding</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/onboarding</span></div>
           <div class="frame-body" style="max-width:380px;margin:0 auto">
             <div class="stepper">
               <div class="step-dot done">✓</div><div class="step-line"></div>
               <div class="step-dot done">✓</div><div class="step-line"></div>
               <div class="step-dot done">✓</div><div class="step-line"></div>
-              <div class="step-dot done">✓</div><div class="step-line"></div>
-              <div class="step-dot done">✓</div><div class="step-line"></div>
-              <div class="step-dot active">6</div>
+              <div class="step-dot active">4</div>
             </div>
             <div id="f3-panel">
               <div class="mini-card" style="margin-bottom:14px">
-                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px"><span style="color:var(--text-3)">Barbearia</span><strong>Barbearia do João</strong></div>
-                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px"><span style="color:var(--text-3)">Página</span><strong>barberia.pt/barbearia-do-joao</strong></div>
-                <div style="display:flex;justify-content:space-between;font-size:12.5px"><span style="color:var(--text-3)">Serviços</span><strong>6 configurados</strong></div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:6px"><span style="color:var(--text-3)">Conta</span><strong>Empresa Exemplo</strong></div>
+                <div style="display:flex;justify-content:space-between;font-size:12.5px"><span style="color:var(--text-3)">Plano</span><strong>Teste grátis</strong></div>
               </div>
-              <div class="mini-card" style="background:var(--indigo-light);border-color:transparent;margin-bottom:16px">
-                <p style="margin:0;font-size:12.5px;font-weight:700">🗓️ Teste gratuito de 30 dias</p>
-                <p style="margin:4px 0 0;font-size:11.5px;color:var(--text-2)">Sem cartão de crédito. O período começa a contar assim que você clicar abaixo.</p>
-              </div>
-              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="f3activate()">🚀 Ativar teste gratuito de 30 dias</button>
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="f3activate()">🚀 Confirmar e continuar</button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 4. Email de boas vindas ════════ -->
+    <!-- ════════ 4. Exemplo: e-mail transacional ════════ -->
     <section class="feature" id="f4">
       <div class="feature-head">
         <div class="feature-icon">✉️</div>
-        <div><h2>Email de boas-vindas passou a ser enviado <span class="feature-tag tag-fix">Corrigido</span></h2></div>
+        <div><h2>Exemplo: e-mail automático passou a ser enviado <span class="feature-tag tag-fix">Corrigido</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Esse email já existia no código — pronto, com o visual da marca — mas <strong>nunca era chamado por
-        nada</strong>. Agora, assim que o cliente clica em "Ativar teste", o sistema dispara automaticamente um
-        email de boas-vindas mencionando o plano ativado e a data em que o teste termina.</p>
+        <p>Use este padrão pra qualquer e-mail novo ou corrigido (boas-vindas, confirmação, alerta). Mostre o
+        preview real do e-mail — assunto, remetente e o conteúdo principal — não apenas descreva.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">inbox · no-reply@barberia.pt</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">inbox · no-reply@suaempresa.com</span></div>
           <div class="frame-body pad-0">
             <div class="email-preview">
-              <div class="email-head">De: BarberIA &lt;no-reply@barberia.pt&gt;<br>Assunto: Teste do plano Free ativado — BarberIA</div>
+              <div class="email-head">De: Acme SaaS &lt;no-reply@suaempresa.com&gt;<br>Assunto: Bem-vindo!</div>
               <div class="email-body">
                 <div class="email-icon">🎉</div>
-                <h3>Bem-vindo ao BarberIA!</h3>
-                <p>Olá <strong>João</strong>, a sua conta está confirmada.<br>Comece a transformar a gestão da sua barbearia.</p>
+                <h3>Bem-vindo!</h3>
+                <p>Olá <strong>Cliente</strong>, a sua conta está confirmada.</p>
                 <div class="email-box">
-                  <p class="t">Teste gratuito do plano Free ativado!</p>
-                  <p class="s">Válido até 09 de agosto de 2026. Sem cartão de crédito.</p>
+                  <p class="t">Teste gratuito ativado!</p>
+                  <p class="s">Válido por 30 dias, sem cartão de crédito.</p>
                 </div>
                 <a class="email-cta" href="#">Aceder ao Painel</a>
               </div>
@@ -478,165 +461,103 @@
       </div>
     </section>
 
-    <!-- ════════ 5. Bloqueio automático ════════ -->
+    <!-- ════════ 5. Exemplo: estado ativo/bloqueado ════════ -->
     <section class="feature" id="f5">
       <div class="feature-head">
         <div class="feature-icon">🔒</div>
-        <div><h2>Bloqueio automático quando o trial expira <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div><h2>Exemplo: bloqueio automático por regra de negócio <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Antes, nada impedia o uso do sistema depois que os 30 dias acabavam — só uma contagem visual, sem
-        travar nada de verdade. Agora, o acesso do dono/gerente é <strong>bloqueado automaticamente</strong>
-        quando o trial vence (ou quando a barbearia é suspensa manualmente), redirecionando direto para a tela
-        de upgrade.</p>
-        <ul>
-          <li><strong>Quem é bloqueado:</strong> dono e gerente da barbearia</li>
-          <li><strong>Quem continua acessando:</strong> barbeiros da equipe (decisão consciente, pra não travar o dia a dia sem aviso)</li>
-        </ul>
+        <p>Use este padrão pra qualquer mudança de acesso condicional (trial vencido, assinatura suspensa,
+        limite atingido). Deixe claro quem é afetado e quem não é.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/dashboard</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/dashboard</span></div>
           <div class="frame-body" style="text-align:center">
             <div style="display:flex;gap:8px;justify-content:center;margin-bottom:18px">
-              <button class="btn btn-outline" onclick="f5set(true)">Simular trial ativo</button>
-              <button class="btn btn-outline" onclick="f5set(false)">Simular trial expirado</button>
+              <button class="btn btn-outline" onclick="f5set(true)">Simular estado ativo</button>
+              <button class="btn btn-outline" onclick="f5set(false)">Simular estado bloqueado</button>
             </div>
             <div id="f5-active" class="mini-card" style="max-width:320px;margin:0 auto;background:var(--success-light);border-color:transparent">
               <p style="margin:0;font-weight:700;color:var(--success)">✅ Acesso normal</p>
-              <p style="margin:4px 0 0;font-size:12px;color:var(--text-2)">Dashboard carregado normalmente — 12 dias restantes de trial.</p>
             </div>
             <div id="f5-blocked" class="mini-card" style="display:none;max-width:320px;margin:0 auto;background:var(--danger-light);border-color:transparent">
               <p style="margin:0;font-weight:700;color:var(--danger)">🔒 Acesso bloqueado</p>
-              <p style="margin:4px 0 0;font-size:12px;color:var(--text-2)">Trial expirado — redirecionando para /dashboard/upgrade…</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 6. Notificações WhatsApp ════════ -->
+    <!-- ════════ 6. Exemplo: lista com filtro e busca ════════ -->
     <section class="feature" id="f6">
       <div class="feature-head">
-        <div class="feature-icon">💬</div>
-        <div><h2>Painel de Notificações via WhatsApp <span class="feature-tag tag-new">Novo</span></h2></div>
-      </div>
-      <div class="feature-body">
-        <p>Nova seção no painel administrativo, separada de tudo o mais, onde a equipe conecta um número de
-        WhatsApp (via QR Code) que passa a <strong>avisar automaticamente</strong> sobre eventos importantes:
-        novo cliente ativando o teste, upgrade para plano pago, e trial prestes a expirar. Também é possível
-        cadastrar quantos números quiser pra receber esses avisos.</p>
-        <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin/notifications</span></div>
-          <div class="frame-body">
-            <div id="f6-disconnected" style="text-align:center">
-              <div class="qr-box" style="width:56px;height:56px;border-radius:14px;opacity:.4;margin-bottom:14px"></div>
-              <p style="font-size:12.5px;color:var(--text-2);margin:0 0 14px">Nenhum número conectado</p>
-              <button class="btn btn-primary" onclick="f6connect()">Gerar QR Code</button>
-            </div>
-            <div id="f6-qrcode" style="display:none;text-align:center">
-              <div class="qr-box"></div>
-              <p style="font-size:12px;color:var(--warning);font-weight:600;margin:14px 0">● Aguardando leitura do QR Code…</p>
-              <button class="btn btn-outline" onclick="f6scan()">Simular leitura do QR</button>
-            </div>
-            <div id="f6-connected" style="display:none">
-              <div style="text-align:center;margin-bottom:20px">
-                <p style="color:var(--success);font-weight:700;margin:0">✅ WhatsApp conectado</p>
-                <p style="font-size:12px;color:var(--text-2);margin:4px 0 0">Este número envia as notificações internas.</p>
-              </div>
-              <div class="mini-card" style="margin-bottom:10px">
-                <p style="font-size:11px;color:var(--text-3);margin:0 0 8px;font-weight:700;text-transform:uppercase">Números que recebem notificação</p>
-                <div id="f6-numbers"></div>
-                <div style="display:flex;gap:6px;margin-top:10px">
-                  <input class="input" id="f6-newnum" placeholder="+351 912 345 678" style="flex:1">
-                  <button class="btn btn-primary" onclick="f6addnum()">+</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 7. Logs ════════ -->
-    <section class="feature" id="f7">
-      <div class="feature-head">
         <div class="feature-icon">🧾</div>
-        <div><h2>Logs de notificação — página própria <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div><h2>Exemplo: página de logs/histórico com busca e filtro <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Todo aviso disparado pelo sistema (novo cliente, upgrade, trial expirando, teste manual) fica
-        registrado numa página dedicada, com <strong>busca</strong>, <strong>filtro por tipo</strong> e
-        <strong>filtro por status de entrega</strong> — pra equipe conseguir auditar o que foi enviado e pra
-        quem.</p>
+        <p>Use este padrão pra qualquer tabela nova com busca/filtro (logs, histórico, lista de registros).</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin/notifications/logs</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/logs</span></div>
           <div class="frame-body">
             <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
-              <input class="input" id="f7-search" placeholder="Buscar por mensagem, telefone…" style="flex:1;min-width:160px" oninput="f7filter()">
-              <select class="input" id="f7-type" style="width:auto" onchange="f7filter()">
+              <input class="input" id="f6-search" placeholder="Buscar…" style="flex:1;min-width:160px" oninput="f6filter()">
+              <select class="input" id="f6-type" style="width:auto" onchange="f6filter()">
                 <option value="">Todos os tipos</option>
-                <option>Trial ativado</option>
-                <option>Upgrade pago</option>
-                <option>Trial expirando</option>
-                <option>Teste</option>
+                <option>Evento A</option>
+                <option>Evento B</option>
               </select>
             </div>
-            <table class="sim" id="f7-table">
-              <thead><tr><th>Tipo</th><th>Barbearia</th><th>Quando</th><th>Status</th></tr></thead>
-              <tbody id="f7-body"></tbody>
+            <table class="sim" id="f6-table">
+              <thead><tr><th>Tipo</th><th>Registro</th><th>Quando</th><th>Status</th></tr></thead>
+              <tbody id="f6-body"></tbody>
             </table>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 8. Lembrete de trial ════════ -->
-    <section class="feature" id="f8">
+    <!-- ════════ 7. Exemplo: código de verificação ════════ -->
+    <section class="feature" id="f7">
       <div class="feature-head">
-        <div class="feature-icon">⏰</div>
-        <div><h2>Lembrete automático de trial prestes a expirar <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div class="feature-icon">🔑</div>
+        <div><h2>Exemplo: fluxo com código de verificação por e-mail <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Uma rotina roda <strong>todos os dias às 9h</strong> e avisa a equipe via WhatsApp sobre qualquer
-        barbearia cujo teste grátis vai vencer nos próximos 3 dias — pra alguém conseguir entrar em contato
-        antes de perder o cliente. Cada aviso só é enviado uma vez por barbearia.</p>
+        <p>Use este padrão pra recuperação de senha, confirmação em duas etapas, ou qualquer fluxo com código
+        de 6 dígitos.</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">cron · todo dia às 09:00</span></div>
-          <div class="frame-body">
-            <div class="wa-wrap">
-              <div class="wa-bubble">⏳ Trial prestes a expirar!
-
-Barbearia: Barbearia do João
-Plano: Free (€0/mes)
-Expira em: 12/08/2026 (3 dias)
-
-Considere entrar em contacto para incentivar o upgrade.</div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/verificar</span></div>
+          <div class="frame-body" style="max-width:340px;margin:0 auto;text-align:center">
+            <p style="font-weight:700;margin:0 0 4px">Verifique o seu email</p>
+            <p style="font-size:12px;color:var(--text-2);margin:0 0 16px">Código enviado para voce@exemplo.com</p>
+            <div class="code-boxes">
+              <input maxlength="1" oninput="f7auto(this)"><input maxlength="1" oninput="f7auto(this)"><input maxlength="1" oninput="f7auto(this)">
+              <input maxlength="1" oninput="f7auto(this)"><input maxlength="1" oninput="f7auto(this)"><input maxlength="1" oninput="f7auto(this)">
             </div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px" onclick="showToast('Código confirmado')">Confirmar código</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 9. Chat ════════ -->
-    <section class="feature" id="f9">
+    <!-- ════════ 8. Exemplo: chat ════════ -->
+    <section class="feature" id="f8">
       <div class="feature-head">
         <div class="feature-icon">🗨️</div>
-        <div><h2>Chat em tempo real <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div><h2>Exemplo: chat/mensagens em tempo real <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Componente próprio, separado das Notificações, chamado só de <strong>"Chat"</strong> no menu. Usa o
-        mesmo número de WhatsApp conectado pra conversar de verdade com quem escrever — com atualização em
-        tempo real, foto de perfil do contato, envio e recebimento de <strong>imagem</strong> e
-        <strong>áudio</strong> (com gravação direto pelo microfone).</p>
+        <p>Use este padrão pra qualquer recurso de mensageria (chat interno, integração com WhatsApp, suporte).</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin/chat</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/chat</span></div>
           <div class="frame-body pad-0">
             <div class="chat-wrap">
-              <div class="chat-list" id="f9-list"></div>
+              <div class="chat-list" id="f8-list"></div>
               <div class="chat-thread">
-                <div class="chat-msgs" id="f9-msgs"></div>
+                <div class="chat-msgs" id="f8-msgs"></div>
                 <div class="chat-input-row">
-                  <input class="input" id="f9-input" placeholder="Escreva uma mensagem..." onkeydown="if(event.key==='Enter')f9send()">
-                  <button class="btn btn-primary" onclick="f9send()">➤</button>
+                  <input class="input" id="f8-input" placeholder="Escreva uma mensagem..." onkeydown="if(event.key==='Enter')f8send()">
+                  <button class="btn btn-primary" onclick="f8send()">➤</button>
                 </div>
               </div>
             </div>
@@ -645,199 +566,76 @@ Considere entrar em contacto para incentivar o upgrade.</div>
       </div>
     </section>
 
-    <!-- ════════ 10. Reset senha ════════ -->
-    <section class="feature" id="f10">
-      <div class="feature-head">
-        <div class="feature-icon">🔑</div>
-        <div><h2>Redefinição de senha por código (Resend) <span class="feature-tag tag-new">Novo</span></h2></div>
-      </div>
-      <div class="feature-body">
-        <p>O link mágico do Supabase saiu de cena. Agora "Esqueceu a senha?" leva a uma <strong>página própria</strong>:
-        o cliente informa o email, recebe um <strong>código de 6 dígitos</strong> pelo Resend (com o email já
-        no visual do BarberIA), digita o código e define a nova senha — tudo em um fluxo guiado. Código expira
-        em 15 minutos e só funciona uma vez.</p>
-        <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/reset-password</span></div>
-          <div class="frame-body" style="max-width:340px;margin:0 auto">
-            <div id="f10-step1">
-              <p style="text-align:center;font-weight:700;margin:0 0 4px">Redefinir senha</p>
-              <p style="text-align:center;font-size:12px;color:var(--text-2);margin:0 0 16px">Informe o seu email para receber um código.</p>
-              <div class="field"><label class="label">Email</label><input class="input" id="f10-email" placeholder="voce@exemplo.com"></div>
-              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="f10next(2)">Enviar código</button>
-            </div>
-            <div id="f10-step2" style="display:none">
-              <p style="text-align:center;font-weight:700;margin:0 0 4px">Verifique o seu email</p>
-              <p style="text-align:center;font-size:12px;color:var(--text-2);margin:0 0 16px">Código enviado para <strong id="f10-emailecho"></strong></p>
-              <div class="code-boxes">
-                <input maxlength="1" oninput="f10auto(this)"><input maxlength="1" oninput="f10auto(this)"><input maxlength="1" oninput="f10auto(this)">
-                <input maxlength="1" oninput="f10auto(this)"><input maxlength="1" oninput="f10auto(this)"><input maxlength="1" oninput="f10auto(this)">
-              </div>
-              <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:14px" onclick="f10next(3)">Confirmar código</button>
-            </div>
-            <div id="f10-step3" style="display:none">
-              <p style="text-align:center;font-weight:700;margin:0 0 4px">Nova senha</p>
-              <p style="text-align:center;font-size:12px;color:var(--text-2);margin:0 0 16px">Escolha uma nova senha para a sua conta.</p>
-              <div class="field"><label class="label">Nova senha</label><input class="input" type="password" placeholder="Mínimo 8 caracteres"></div>
-              <div class="field"><label class="label">Confirmar senha</label><input class="input" type="password" placeholder="Repita a senha"></div>
-              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="f10next(4)">Salvar nova senha</button>
-            </div>
-            <div id="f10-step4" style="display:none;text-align:center">
-              <div style="width:52px;height:52px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px">✓</div>
-              <p style="font-weight:700;margin:0 0 4px">Senha redefinida!</p>
-              <p style="font-size:12px;color:var(--text-2);margin:0 0 14px">Já pode entrar com a sua nova senha.</p>
-              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="f10reset()">Reiniciar simulação</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 11. Contactar ════════ -->
-    <section class="feature" id="f11">
-      <div class="feature-head">
-        <div class="feature-icon">📣</div>
-        <div><h2>Botões "Contactar" da Dashboard agora funcionam <span class="feature-tag tag-fix">Corrigido</span></h2></div>
-      </div>
-      <div class="feature-body">
-        <p>Os botões "Contactar" nas seções <strong>Previsão de Churn</strong> e <strong>Radar de Expansão</strong>
-        só mostravam uma notificação fingindo que algo tinha acontecido — não enviavam nada de verdade. Agora,
-        cada clique dispara um <strong>email real</strong> pro dono da barbearia (reengajamento ou oferta de
-        upgrade) e avisa a equipe interna via WhatsApp com todos os detalhes do cliente e da oportunidade.</p>
-        <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin</span></div>
-          <div class="frame-body">
-            <table class="sim" style="margin-bottom:16px">
-              <thead><tr><th>Barbearia</th><th>Risco</th><th>Plano</th><th></th></tr></thead>
-              <tbody>
-                <tr>
-                  <td class="strong">Barbearia Vintage</td>
-                  <td><span class="badge badge-danger">78</span></td>
-                  <td>Free</td>
-                  <td><button class="btn btn-outline" id="f11-btn" onclick="f11contact()">✉ Contactar</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <div id="f11-result" style="display:none">
-              <div style="display:flex;gap:8px;margin-bottom:12px">
-                <span class="badge badge-success">✓ Email enviado</span>
-                <span class="badge badge-success">✓ Equipa avisada via WhatsApp</span>
-              </div>
-              <p style="font-size:11px;color:var(--text-3);text-transform:uppercase;font-weight:700;margin:0 0 6px">Mensagem enviada ao time</p>
-              <div class="wa-wrap"><div class="wa-bubble">⚠️ Contacto de retenção enviado!
-
-Barbearia: Barbearia Vintage
-Email: contato@vintage.pt
-WhatsApp/Telefone: +351 913 222 111
-Plano atual: Free (€0/mes)
-Status da assinatura: Trial
-Score de risco: 78/100
-
-Motivo do risco:
-  • Sem agendamentos nos últimos 30 dias
-  • Trial há mais de 30 dias sem converter
-
-Oportunidade: reter €47/mes de MRR se converter para o Professional — recomendado ligar ou mandar WhatsApp diretamente.
-Enviado por: Augusto</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 12. Correção churn ════════ -->
-    <section class="feature" id="f12">
+    <!-- ════════ 9. Exemplo: antes/depois ════════ -->
+    <section class="feature" id="f9">
       <div class="feature-head">
         <div class="feature-icon">🐛</div>
-        <div><h2>Cálculo de risco de churn corrigido <span class="feature-tag tag-fix">Corrigido</span></h2></div>
+        <div><h2>Exemplo: bug corrigido <span class="feature-tag tag-fix">Corrigido</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>A "Previsão de Churn" ainda usava 14 dias como referência de duração do trial — desatualizado desde
-        que o teste passou a ser de 30 dias. Isso fazia barbearias saudáveis, com trial ainda ativo, serem
-        marcadas como "em risco" antes da hora.</p>
+        <p>Use este padrão pra qualquer correção de bug: explique o comportamento errado e o comportamento
+        correto lado a lado, sem jargão técnico.</p>
         <div class="diff-grid">
-          <div class="diff-col diff-before"><span class="diff-label">Antes</span>Marcado como risco após <strong>14 dias</strong> de trial sem converter — mesmo faltando 16 dias pro fim real do teste.</div>
-          <div class="diff-col diff-after"><span class="diff-label">Agora</span>Só é marcado como risco após <strong>30 dias</strong> — batendo com o prazo real do trial gratuito.</div>
+          <div class="diff-col diff-before"><span class="diff-label">Antes</span>Descrição do comportamento incorreto observado pelo usuário.</div>
+          <div class="diff-col diff-after"><span class="diff-label">Agora</span>Descrição do comportamento correto após a correção.</div>
         </div>
       </div>
     </section>
 
-    <!-- ════════ 13. Badge trial expirado ════════ -->
-    <section class="feature" id="f13">
-      <div class="feature-head">
-        <div class="feature-icon">🏷️</div>
-        <div><h2>Badge "Trial expirado" na lista de barbearias <span class="feature-tag tag-new">Novo</span></h2></div>
-      </div>
-      <div class="feature-body">
-        <p>Antes, a lista de barbearias mostrava o mesmo selo amarelo "Trial" tanto pra quem ainda tinha dias
-        sobrando quanto pra quem já estava bloqueado por ter vencido. Agora existe um selo vermelho específico
-        e um filtro próprio pra achar rapidamente quem está nessa situação.</p>
-        <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin/shops</span></div>
-          <div class="frame-body">
-            <select class="input" id="f13-filter" style="width:auto;margin-bottom:12px" onchange="f13filter()">
-              <option value="">Todos os status</option>
-              <option>Ativa (pago)</option>
-              <option>Trial</option>
-              <option>Trial expirado</option>
-              <option>Suspensa</option>
-            </select>
-            <table class="sim" id="f13-table">
-              <thead><tr><th>Barbearia</th><th>Status</th></tr></thead>
-              <tbody id="f13-body"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ════════ 14. Página da barbearia ════════ -->
-    <section class="feature" id="f14">
+    <!-- ════════ 10. Exemplo: detalhe com abas ════════ -->
+    <section class="feature" id="f10">
       <div class="feature-head">
         <div class="feature-icon">🏪</div>
-        <div><h2>Página de detalhe da barbearia <span class="feature-tag tag-new">Novo</span></h2></div>
+        <div><h2>Exemplo: nova página de detalhe com abas <span class="feature-tag tag-new">Novo</span></h2></div>
       </div>
       <div class="feature-body">
-        <p>Clicar numa barbearia não abre mais uma janelinha lateral limitada — agora leva a uma
-        <strong>página própria</strong>, usando o link público da loja na URL (não mais um ID técnico), com
-        visão geral, histórico completo de pagamentos e um registro de todas as trocas de plano feitas dali
-        pra frente.</p>
+        <p>Use este padrão quando uma página de detalhe (cliente, pedido, conta) ganhar abas com informações
+        organizadas (visão geral, histórico, pagamentos).</p>
         <div class="frame">
-          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">barberia.pt/admin/shops/barbearia-do-joao</span></div>
+          <div class="frame-bar"><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-url">app.suaempresa.com/clientes/exemplo</span></div>
           <div class="frame-body">
             <div class="tabs">
-              <button class="tab-btn active" onclick="f14tab(0,this)">Visão Geral</button>
-              <button class="tab-btn" onclick="f14tab(1,this)">Pagamentos</button>
-              <button class="tab-btn" onclick="f14tab(2,this)">Histórico</button>
+              <button class="tab-btn active" onclick="f10tab(0,this)">Visão Geral</button>
+              <button class="tab-btn" onclick="f10tab(1,this)">Histórico</button>
             </div>
             <div class="tab-panel active" data-p="0">
-              <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
                 <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">Total gasto</p><p style="margin:2px 0 0;font-weight:800">€329</p></div>
-                <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">MRR atual</p><p style="margin:2px 0 0;font-weight:800">€47</p></div>
-                <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">Membros</p><p style="margin:2px 0 0;font-weight:800">3</p></div>
-                <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">Criada em</p><p style="margin:2px 0 0;font-weight:800">02/04/2026</p></div>
+                <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">Plano</p><p style="margin:2px 0 0;font-weight:800">Pro</p></div>
+                <div class="mini-card"><p style="margin:0;font-size:10px;color:var(--text-3);text-transform:uppercase;font-weight:700">Desde</p><p style="margin:2px 0 0;font-weight:800">02/04/2026</p></div>
               </div>
             </div>
             <div class="tab-panel" data-p="1">
-              <table class="sim">
-                <thead><tr><th>Data</th><th>Status</th><th></th></tr></thead>
-                <tbody>
-                  <tr><td>09/07/2026</td><td><span class="badge badge-success">PAID</span></td><td style="text-align:right" class="strong">€47,00</td></tr>
-                  <tr><td>09/06/2026</td><td><span class="badge badge-success">PAID</span></td><td style="text-align:right" class="strong">€47,00</td></tr>
-                  <tr><td>09/05/2026</td><td><span class="badge badge-outline">REFUNDED</span></td><td style="text-align:right" class="strong">€47,00</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="tab-panel" data-p="2">
-              <div class="mini-card" style="margin-bottom:8px"><p style="margin:0">↔️ Plano alterado de <strong>Free</strong> para <strong>Professional</strong></p><p style="margin:2px 0 0;font-size:10px;color:var(--text-3)">09/06/2026 14:22</p></div>
-              <div class="mini-card"><p style="margin:0">📝 Cliente pediu suporte pra migrar clientes do sistema antigo.</p><p style="margin:2px 0 0;font-size:10px;color:var(--text-3)">03/06/2026 10:05</p></div>
+              <div class="mini-card"><p style="margin:0">↔️ Plano alterado de <strong>Basic</strong> para <strong>Pro</strong></p></div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════ 11. Pendências ════════ -->
+    <section class="feature" id="f11">
+      <div class="feature-head">
+        <div class="feature-icon">📋</div>
+        <div><h2>Exemplo: pendências — decisões que ainda faltam tomar <span class="feature-tag tag-improve">Em aberto</span></h2></div>
+      </div>
+      <div class="feature-body">
+        <p>Sempre inclua uma seção final assim quando houver decisões de negócio pendentes (não bugs, não
+        tarefas técnicas — escolhas que dependem do dono do produto). Liste cada uma como um card curto,
+        em linguagem simples, explicando por que ainda está em aberto.</p>
+        <div class="mini-card" style="margin-bottom:12px">
+          <p style="margin:0 0 6px;font-weight:700">1. Exemplo de decisão pendente A</p>
+          <p style="margin:0;font-size:12.5px;color:var(--text-2)">Descrição curta do que falta decidir e por quê.</p>
+        </div>
+        <div class="mini-card">
+          <p style="margin:0 0 6px;font-weight:700">2. Exemplo de decisão pendente B</p>
+          <p style="margin:0;font-size:12.5px;color:var(--text-2)">Descrição curta do que falta decidir e por quê.</p>
         </div>
       </div>
     </section>
 
     <div class="footer-note">
-      Documento gerado automaticamente para acompanhamento interno · BarberIA · 10/07/2026
+      Documento gerado automaticamente para acompanhamento interno · {NOME DO PROJETO} · {DD/MM/AAAA}
     </div>
   </main>
 </div>
@@ -855,14 +653,13 @@ Enviado por: Augusto</div></div>
     setTimeout(() => { t.classList.remove('show'); setTimeout(() => t.remove(), 300); }, 2600);
   }
 
-  // ── F1: trial 30 dias ──
+  // ── F1 ──
   function f1activate() {
-    const end = new Date(); end.setDate(end.getDate() + 30);
-    document.getElementById('f1-msg').innerHTML = '✅ Trial ativado — <strong>30 dias</strong> restantes, até ' + end.toLocaleDateString('pt-PT') + '.';
-    showToast('Trial de 30 dias ativado');
+    document.getElementById('f1-msg').innerHTML = '✅ Recurso ativado com sucesso.';
+    showToast('Ativado com sucesso');
   }
 
-  // ── F2: termos ──
+  // ── F2 ──
   function f2toggle() {
     document.getElementById('f2btn').disabled = !document.getElementById('f2check').checked;
   }
@@ -871,164 +668,86 @@ Enviado por: Augusto</div></div>
     document.getElementById('f2time').textContent = new Date().toLocaleTimeString('pt-PT');
   }
 
-  // ── F3: ativação onboarding ──
+  // ── F3 ──
   function f3activate() {
-    const end = new Date(); end.setDate(end.getDate() + 30);
     document.getElementById('f3-panel').innerHTML =
       '<div style="text-align:center;padding:20px 0">' +
       '<div style="width:52px;height:52px;border-radius:50%;background:var(--success-light);display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:24px">✓</div>' +
-      '<p style="font-weight:700;margin:0 0 4px">Trial ativado!</p>' +
-      '<p style="font-size:12px;color:var(--text-2);margin:0">Válido até ' + end.toLocaleDateString('pt-PT') + '</p></div>';
-    showToast('Redirecionando para o dashboard…');
+      '<p style="font-weight:700;margin:0">Confirmado!</p></div>';
+    showToast('Avançando para o próximo passo…');
   }
 
-  // ── F5: bloqueio ──
+  // ── F5 ──
   function f5set(active) {
     document.getElementById('f5-active').style.display = active ? 'block' : 'none';
     document.getElementById('f5-blocked').style.display = active ? 'none' : 'block';
   }
 
-  // ── F6: whatsapp connect ──
-  let f6nums = [{ phone: '+351 912 345 678', label: 'Fábio', active: true }, { phone: '+351 913 000 111', label: 'Augusto', active: true }];
-  function f6connect() {
-    document.getElementById('f6-disconnected').style.display = 'none';
-    document.getElementById('f6-qrcode').style.display = 'block';
-  }
-  function f6scan() {
-    document.getElementById('f6-qrcode').style.display = 'none';
-    document.getElementById('f6-connected').style.display = 'block';
-    f6render();
-    showToast('WhatsApp conectado com sucesso');
-  }
-  function f6render() {
-    const el = document.getElementById('f6-numbers');
-    el.innerHTML = f6nums.map((n, i) =>
-      '<div style="display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border)">' +
-      '<div><p style="margin:0;font-size:12.5px;font-weight:600">' + n.phone + '</p><p style="margin:0;font-size:10.5px;color:var(--text-3)">' + n.label + '</p></div>' +
-      '<div style="display:flex;align-items:center;gap:8px">' +
-      '<div class="switch ' + (n.active ? 'on' : '') + '" onclick="f6toggle(' + i + ')"><div class="knob"></div></div>' +
-      '<button onclick="f6remove(' + i + ')" style="background:none;border:none;cursor:pointer;color:var(--text-3);font-size:13px">✕</button>' +
-      '</div></div>'
-    ).join('');
-  }
-  function f6toggle(i) { f6nums[i].active = !f6nums[i].active; f6render(); }
-  function f6remove(i) { f6nums.splice(i, 1); f6render(); }
-  function f6addnum() {
-    const inp = document.getElementById('f6-newnum');
-    if (!inp.value.trim()) return;
-    f6nums.push({ phone: inp.value.trim(), label: 'Novo', active: true });
-    inp.value = '';
-    f6render();
-  }
-
-  // ── F7: logs ──
-  const f7data = [
-    { type: 'Trial ativado', shop: 'Barbearia do João', when: 'há 2h', ok: true },
-    { type: 'Upgrade pago', shop: 'Petter Barber', when: 'há 5h', ok: true },
-    { type: 'Trial expirando', shop: 'Barbearia Vintage', when: 'ontem', ok: true },
-    { type: 'Teste', shop: 'Barbearia Exemplo', when: '2 dias atrás', ok: false },
+  // ── F6: tabela com filtro ──
+  const f6data = [
+    { type: 'Evento A', item: 'Registro 1', when: 'há 2h', ok: true },
+    { type: 'Evento B', item: 'Registro 2', when: 'há 5h', ok: true },
+    { type: 'Evento A', item: 'Registro 3', when: 'ontem', ok: false },
   ];
-  function f7render(list) {
-    document.getElementById('f7-body').innerHTML = list.map(r =>
-      '<tr><td><span class="badge badge-outline">' + r.type + '</span></td><td class="strong">' + r.shop + '</td><td>' + r.when + '</td><td>' +
-      (r.ok ? '<span class="badge badge-success">✓ Entregue</span>' : '<span class="badge badge-danger">✕ Falhou</span>') + '</td></tr>'
+  function f6render(list) {
+    document.getElementById('f6-body').innerHTML = list.map(r =>
+      '<tr><td><span class="badge badge-outline">' + r.type + '</span></td><td class="strong">' + r.item + '</td><td>' + r.when + '</td><td>' +
+      (r.ok ? '<span class="badge badge-success">✓ OK</span>' : '<span class="badge badge-danger">✕ Falhou</span>') + '</td></tr>'
     ).join('');
   }
-  function f7filter() {
-    const q = document.getElementById('f7-search').value.toLowerCase();
-    const type = document.getElementById('f7-type').value;
-    f7render(f7data.filter(r => (!type || r.type === type) && (r.shop.toLowerCase().includes(q) || r.type.toLowerCase().includes(q))));
+  function f6filter() {
+    const q = document.getElementById('f6-search').value.toLowerCase();
+    const type = document.getElementById('f6-type').value;
+    f6render(f6data.filter(r => (!type || r.type === type) && (r.item.toLowerCase().includes(q) || r.type.toLowerCase().includes(q))));
   }
-  f7render(f7data);
+  f6render(f6data);
 
-  // ── F9: chat ──
-  const f9convos = [
-    { name: 'Ricardo Alves', last: 'Combinado, até amanhã!', msgs: [
-      { in: true, text: 'Oi! Vocês têm horário amanhã de manhã?' },
-      { in: false, text: 'Temos sim! 9h ou 10h30, qual prefere?' },
+  // ── F7 ──
+  function f7auto(el) {
+    if (el.value.length === 1 && el.nextElementSibling) el.nextElementSibling.focus();
+  }
+
+  // ── F8: chat ──
+  const f8convos = [
+    { name: 'Cliente A', last: 'Combinado, até amanhã!', msgs: [
+      { in: true, text: 'Oi! Vocês têm horário amanhã?' },
+      { in: false, text: 'Temos sim! Qual horário prefere?' },
       { in: true, text: 'Combinado, até amanhã!' },
     ]},
-    { name: 'Marta Sousa', last: '📷 Foto', msgs: [
+    { name: 'Cliente B', last: '📷 Foto', msgs: [
       { in: true, img: true },
-      { in: false, text: 'Ficou ótimo o corte! 😄' },
-    ]},
-    { name: 'Studio Fade', last: '🎤 Áudio · 0:12', msgs: [
-      { in: true, audio: true },
-      { in: false, text: 'Perfeito, já te ligo confirmando.' },
+      { in: false, text: 'Recebido! 😄' },
     ]},
   ];
-  let f9active = 0;
-  function f9renderList() {
-    document.getElementById('f9-list').innerHTML = f9convos.map((c, i) =>
-      '<div class="chat-item ' + (i === f9active ? 'active' : '') + '" onclick="f9select(' + i + ')">' +
+  let f8active = 0;
+  function f8renderList() {
+    document.getElementById('f8-list').innerHTML = f8convos.map((c, i) =>
+      '<div class="chat-item ' + (i === f8active ? 'active' : '') + '" onclick="f8select(' + i + ')">' +
       '<div class="chat-avatar">' + c.name.charAt(0) + '</div>' +
       '<div class="meta"><p class="nm">' + c.name + '</p><p class="lm">' + c.last + '</p></div></div>'
     ).join('');
   }
-  function f9renderMsgs() {
-    const c = f9convos[f9active];
-    document.getElementById('f9-msgs').innerHTML = c.msgs.map(m => {
+  function f8renderMsgs() {
+    const c = f8convos[f8active];
+    document.getElementById('f8-msgs').innerHTML = c.msgs.map(m => {
       if (m.img) return '<div class="bubble in"><div class="img-ph">🖼️</div></div>';
-      if (m.audio) return '<div class="bubble in"><div class="audio-ph"><div class="play">▶</div><div class="wave"></div></div></div>';
       return '<div class="bubble ' + (m.in ? 'in' : 'out') + '">' + m.text + '</div>';
     }).join('');
   }
-  function f9select(i) { f9active = i; f9renderList(); f9renderMsgs(); }
-  function f9send() {
-    const inp = document.getElementById('f9-input');
+  function f8select(i) { f8active = i; f8renderList(); f8renderMsgs(); }
+  function f8send() {
+    const inp = document.getElementById('f8-input');
     if (!inp.value.trim()) return;
-    f9convos[f9active].msgs.push({ in: false, text: inp.value.trim() });
-    f9convos[f9active].last = inp.value.trim();
+    f8convos[f8active].msgs.push({ in: false, text: inp.value.trim() });
+    f8convos[f8active].last = inp.value.trim();
     inp.value = '';
-    f9renderList(); f9renderMsgs();
-    document.getElementById('f9-msgs').scrollTop = 9999;
+    f8renderList(); f8renderMsgs();
+    document.getElementById('f8-msgs').scrollTop = 9999;
   }
-  f9renderList(); f9renderMsgs();
+  f8renderList(); f8renderMsgs();
 
-  // ── F10: reset senha ──
-  function f10next(step) {
-    for (let i = 1; i <= 4; i++) document.getElementById('f10-step' + i).style.display = i === step ? 'block' : 'none';
-    if (step === 2) document.getElementById('f10-emailecho').textContent = document.getElementById('f10-email').value || 'voce@exemplo.com';
-  }
-  function f10auto(el) {
-    if (el.value.length === 1 && el.nextElementSibling) el.nextElementSibling.focus();
-  }
-  function f10reset() {
-    f10next(1);
-    document.querySelectorAll('#f10-step2 input').forEach(i => i.value = '');
-  }
-
-  // ── F11: contactar ──
-  function f11contact() {
-    const btn = document.getElementById('f11-btn');
-    btn.textContent = 'Enviando...'; btn.disabled = true;
-    setTimeout(() => {
-      document.getElementById('f11-result').style.display = 'block';
-      btn.style.display = 'none';
-      showToast('Email enviado — equipa avisada via WhatsApp');
-    }, 700);
-  }
-
-  // ── F13: badge filter ──
-  const f13data = [
-    { name: 'Petter Barber', status: 'Ativa (pago)', variant: 'success' },
-    { name: 'Barbearia do João', status: 'Trial', variant: 'warning' },
-    { name: 'Barbearia Vintage', status: 'Trial expirado', variant: 'danger' },
-    { name: 'Studio Fade', status: 'Suspensa', variant: 'danger' },
-  ];
-  function f13render(list) {
-    document.getElementById('f13-body').innerHTML = list.map(s =>
-      '<tr><td class="strong">' + s.name + '</td><td><span class="badge badge-' + s.variant + '">' + s.status + '</span></td></tr>'
-    ).join('');
-  }
-  function f13filter() {
-    const v = document.getElementById('f13-filter').value;
-    f13render(v ? f13data.filter(s => s.status === v) : f13data);
-  }
-  f13render(f13data);
-
-  // ── F14: tabs ──
-  function f14tab(i, btn) {
+  // ── F10: tabs ──
+  function f10tab(i, btn) {
     btn.parentElement.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     btn.closest('.frame-body').querySelectorAll('.tab-panel').forEach(p => p.classList.toggle('active', p.dataset.p == i));
