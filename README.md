@@ -16,4 +16,4 @@ Depois disso, basta pedir ao Claude Code um "changelog" ou "html de apresentaç�
 ## Conteúdo
 
 - `SKILL.md` — instruções da skill (estrutura obrigatória, como adaptar cores/branding, onde publicar).
-- `assets/template.html` — template completo de referência (design tokens, tema claro/escuro, componentes reutilizáveis e simulações em JS puro), extraído do primeiro changelog criado (projeto BarberIA, 10/07/2026).
+- `assets/template.html` — template completo de referência (design tokens, tema claro/escuro, componentes reutilizáveis e simulações em JS puro), com 10 seções de exemplo genéricas cobrindo os principais tipos de simulação. Sem dados de nenhum projeto real.
